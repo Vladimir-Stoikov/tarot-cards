@@ -1,13 +1,17 @@
 import React from 'react';
-import Title from './components/Title';
-import CardsLayout from './components/deck/CardsLayout.jsx';
+import { Routes, Route } from 'react-router-dom';
+
+import Menu from './pages/Menu';
+import ThreeCardSpread from './pages/ThreeCardSpread';
 
 function App() {
   return (
-    <div className='App'>
-      <Title />
-      <CardsLayout />
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Menu />} />
+        <Route path='/ThreeCardSpread' element={<ThreeCardSpread />} />
+      </Routes>
+    </>
   );
 }
 
