@@ -4,13 +4,15 @@ import styled from 'styled-components';
 
 const TitleS = styled.h1`
 font-family: 'Neucha', cursive;
-color: #E59934;
+font-size: 3rem;
+color: #ae54c7;
 text-align: center;
+
 `
 
 
-function Title() {
-  return <TitleS>Раскладочка картишек на твой вопросик</TitleS>
+function Title({name}) {
+  return <TitleS>{name}</TitleS>
 }
 
 export default Title;

@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Routes, Route, Link } from 'react-router-dom';
-
-import ThreeCardSpread from './ThreeCardSpread'
+import { Link } from 'react-router-dom';
 
 const UlStyled = styled.ul`
 list-style: none;
@@ -27,12 +25,26 @@ li:hover {
 li:active {
   background: #ae54c7;
 }
-a:link, a:visited {
-  color: white;
+a {
   text-decoration: none;
   font-size: 3rem;
   user-select: none;
 }
+a:link, a:visited {
+  color: white;
+}
+@media(max-width: 1100px) {
+  margin: auto;
+}
+@media(max-width: 790px) {
+  height: 100vw;
+  width: 80%;
+
+  overflow: none;
+  a {
+    font-size: 2rem;
+  }
+ }
 `
 
 export default function Menu() {

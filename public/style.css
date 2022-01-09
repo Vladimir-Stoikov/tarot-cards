@@ -19,13 +19,22 @@ body {
   overflow: hidden;
 }
 
+.disable {
+  display: none;
+}
+
+.spread {
+  margin-top: 50%;
+  display: none;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #2c272e;
+  /* background: #2c272e; */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -37,3 +46,10 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rebeccapurple;
 }
+
+/* @media (max-width: 1100px) {
+  body {
+    overflow: scroll;
+    height: 100%;
+  }
+} ; */

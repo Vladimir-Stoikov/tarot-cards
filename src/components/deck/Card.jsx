@@ -13,6 +13,9 @@ const CardSt = styled.section`
 width: 300px;
 text-align: center;
 color: white;
+@media(max-width: 1000px) {
+  margin: 0 auto 50px;
+ }
 `
 
 const CardText = styled.div`
@@ -22,7 +25,7 @@ height: 200px;
 overflow-y: scroll;
 `
 
-export default function Card({cardNumber, time}) {
+export default function Card({cardNumber, time, type}) {
 
   let cardInfo = '';
 
@@ -30,8 +33,11 @@ export default function Card({cardNumber, time}) {
     cardInfo = deckInfo.filter(card => card.cardName === cardNumber);
   };
 
+  if(!cardNumber) return null;
 
-  return <CardSt><CardImg src={`/tarot/${cardNumber || 'cardBack'}.jpg`} alt="image" />
-            <CardText>{cardNumber ? cardInfo[0].love : ''}</CardText>
+
+  return <CardSt>
+            <CardImg src={`/tarot/${cardNumber || 'cardBack'}.jpg`} alt="image" draggable={false} />
+            <CardText>{cardNumber ? cardInfo[0][type] : null}</CardText>
           </CardSt>;
 }
