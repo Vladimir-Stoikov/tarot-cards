@@ -22,13 +22,14 @@ color: white;
 `
 
 const CardText = styled.div`
+display: ${props => (props.display === 'cardBack') ? 'none' : 'block'};
 padding-right: 5px;
 text-align: justify;
 height: 200px;
 overflow-y: scroll;
 `
 
-export default function Card({cardNumber, time, type, func}) {
+export default function Card({cardNumber, headTitle, type, func}) {
 
   let cardInfo = '';
 
@@ -38,10 +39,10 @@ export default function Card({cardNumber, time, type, func}) {
 
   if(!cardNumber) return null;
 
-
   return <CardSt>
+            <Title titleMargin='0 auto 15px' name={headTitle ? headTitle : null} />
             <CardImg onClick={() => func ? func() : null} src={`/tarot/${cardNumber || 'cardBack'}.jpg`} alt="image" draggable={false} />
             <Title titleMargin='0 0 15px 0' color='#E59934' name={(cardNumber !== false && cardNumber !== 'cardBack') ? cardInfo[0].name : null}/>
-            <CardText>{(cardNumber !== false && cardNumber !== 'cardBack') ? cardInfo[0][type] : null}</CardText>
+            <CardText display={cardNumber}>{(cardNumber !== 'cardBack') ? cardInfo[0][type] : null}</CardText>
           </CardSt>;
 }

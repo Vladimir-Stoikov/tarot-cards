@@ -8,7 +8,6 @@ flex-direction: column;
 list-style: none;
 text-align: center;
 margin: 20% auto 0;
-width: 40%;
 a {
   font-size: 3rem;
   background: #753188;
@@ -56,7 +55,7 @@ export default function Menu() {
     <LinkGroup className={'menu'}>
      <Link to='/ThreeCardSpread'>Расклад на три карты</Link>
      <Link to='/CardOfTheDay'>Карта дня</Link>
-     <a href='#'>Совет и предостережение</a>
+     <Link to='/AdviceAndCaution'>Совет и предостережение</Link>
     </LinkGroup>
    </>
 }

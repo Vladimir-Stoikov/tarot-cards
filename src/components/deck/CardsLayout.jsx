@@ -5,7 +5,6 @@ import Card from './Card'
 
 
 const LayoutS = styled.section`
-margin: 50px 0;
 width: 90vw;
 height: 100%;
 display: flex;
@@ -52,9 +51,9 @@ export default function CardsLayout({type, func}) {
   }
  
   return <LayoutS>
-         <Card type={type} cardNumber={shuffledDeck[25] || ''}/>
-         <Card type={type} cardNumber={shuffledDeck[50] || ''}/>
-         <Card type={type} cardNumber={shuffledDeck[75] || ''}/>
+         <Card headTitle='Сейчас' type={type} cardNumber={shuffledDeck[25] || ''}/>
+         <Card headTitle='Развитие' type={type} cardNumber={shuffledDeck[50] || ''}/>
+         <Card headTitle='Итог' type={type} cardNumber={shuffledDeck[75] || ''}/>
          <DeckS className={disable} src='tarot/cardBack.jpg' onClick={multiMove}/>
          </LayoutS>
 }

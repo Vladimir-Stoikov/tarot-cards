@@ -17,10 +17,7 @@ text-align: center;
 margin: 3% auto;
 display: flex;
 justify-content: center;
-@media(max-width: 500px) {
-  width: 80%;
-  flex-wrap: wrap;
- }
+
 input {
   display: none;
 }
@@ -30,16 +27,25 @@ label {
   background: #ae54c7;
   padding: 10px;
   border-radius: 20px;
-  margin: 0 0 0 20px;
-  @media(max-width: 500px) {
+  margin: 0 0 0 15px;
+  }
+
+@media(max-width: 650px) {
+    width: 80%;
+    flex-direction: column;
     font-size: 1.5rem;
     margin-top: 10px;
+    label { 
+      margin: 10px 0;
+    }
   }
 }
-label:hover{
+
+label:hover {
   background: #c162db;
 }
-label:active, input:checked + label{
+
+label:active, input:checked + label {
   background: #d17be9;
   user-select: none;
   box-shadow: 0 0 15px #c162db;
@@ -47,11 +53,6 @@ label:active, input:checked + label{
 `
 
 export default function ThreeCardSpread() {
-
-  const css = `
-        height: 100%;
-        overflow: scroll;
-        `
 
   const [typeOfPrediction, setTypeOfPrediction] = useState('question');
   const [disableChoice, setDisableChoice] = useState(false);
@@ -70,7 +71,7 @@ export default function ThreeCardSpread() {
       <Header>
          <Link to={'/'}><i className="far fa-arrow-alt-circle-left icon"></i></Link>
          <i className="far fa-question-circle icon"></i>
-      </Header>    
+      </Header>
       <RadioSt>
         <Title name='Расклад на:' />
         <input disabled={disableChoice} type="radio" id='question' name='type' value='question' defaultChecked/>
