@@ -10,7 +10,13 @@ height: 100%;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
-@media(max-width: 1000px) {
+@media(max-width: 1900px) {
+  width: 100vw;
+} 
+@media(max-width: 1700px) {
+  width: 90vw;
+} 
+@media(max-width: 1200px) {
   width: 100%;
   flex-direction: column;
   justify-content: center;

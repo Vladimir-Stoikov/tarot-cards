@@ -9,18 +9,18 @@ const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2%;
 `
 
 const RadioSt = styled.section`
 text-align: center;
-margin: 3% auto;
+margin: 2% auto;
 display: flex;
 justify-content: center;
 
 input {
   display: none;
-}
+};
+
 label {
   color: white;
   font-size: 2rem;
@@ -28,7 +28,17 @@ label {
   padding: 10px;
   border-radius: 20px;
   margin: 0 0 0 15px;
-  }
+};
+
+label:hover {
+  background: #c162db;
+};
+
+label:active, input:checked + label {
+  background: #d17be9;
+  user-select: none;
+  box-shadow: 0 0 15px #c162db;
+};
 
 @media(max-width: 650px) {
     width: 80%;
@@ -38,18 +48,7 @@ label {
     label { 
       margin: 10px 0;
     }
-  }
-}
-
-label:hover {
-  background: #c162db;
-}
-
-label:active, input:checked + label {
-  background: #d17be9;
-  user-select: none;
-  box-shadow: 0 0 15px #c162db;
-}
+  };
 `
 
 export default function ThreeCardSpread() {

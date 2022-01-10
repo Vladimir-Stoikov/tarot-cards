@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 import Card from '../components/deck/Card'
-import Title from '../components/Title'
 import { deckInfo } from '../components/deck/data/card-info'
 
 
@@ -16,21 +15,15 @@ const Header = styled.header`
 
 const CardGroup = styled.section`
   display: flex;
-  justify-content: space-between;
-  width: 40vw;
-  @media(max-width: 1600px) {
-    width: 50vw;
-  }
-  @media(max-width: 1300px) {
-    width: 60vw;
-  }
-  @media(max-width: 1050px) {
-    width: 70vw;
-  }
-  @media(max-width: 900px) {
+  justify-content: center;
+   @media(max-width: 1700px) {
     width: 90vw;
   }
-  @media(max-width: 700px) {
+  @media(max-width: 1200px) {
+    width: 100vw;
+  }
+
+  @media(max-width: 1100px) {
     flex-direction: column;
   }
 `
@@ -41,14 +34,18 @@ const AdviceAndCaution = () => {
   const [caution, setCaution] = useState('cardBack')
 
   function getAdvice() {
-    let randomCard =  Math.floor(Math.random() * 79);
-    while(randomCard === caution) randomCard =  Math.floor(Math.random() * 79);
+    let randomCard = Math.floor(Math.random() * 79);
+    while(randomCard == caution) {
+      randomCard = Math.floor(Math.random() * 79);
+    }
     if(advice === 'cardBack') setAdvice(deckInfo[randomCard].cardName);
   }
 
   function getCaution() {
-    let randomCard =  Math.floor(Math.random() * 79);
-    while(randomCard === advice) randomCard =  Math.floor(Math.random() * 79);
+    let randomCard = Math.floor(Math.random() * 79);
+    while(randomCard == advice) {
+      randomCard = Math.floor(Math.random() * 79);
+    }
     if(caution === 'cardBack') setCaution(deckInfo[randomCard].cardName);
   }
 
@@ -58,8 +55,10 @@ const AdviceAndCaution = () => {
          <Link to={'/'}><i className="far fa-arrow-alt-circle-left icon"></i></Link>
          <i className="far fa-question-circle icon"></i>
       </Header> 
-      <CardGroup><Card headTitle='Совет' func={getAdvice} cardNumber={advice} type='advice'/>
-      <Card headTitle='Предостережение' func={getCaution} cardNumber={caution} type='advice'/></CardGroup>
+      <CardGroup>
+        <Card headTitle='Совет' func={getAdvice} cardNumber={advice} type='advice'/>
+        <Card headTitle='Предостережение' func={getCaution} cardNumber={caution} type='advice'/>
+      </CardGroup>
     </section>
   )
   
