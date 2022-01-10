@@ -5,33 +5,11 @@ import { Link } from "react-router-dom";
 import Title from '../components/Title';
 import CardsLayout from '../components/deck/CardsLayout.jsx';
 
-const css = `
-  .icon {
-    color: white;
-    font-size: 4rem;
-    transition: all 0.2s ease;
-    margin: 30px 30px 0 0;
-  }
-  .icon:hover {
-    color: #ae54c7;
-  }
-  .icon:active {
-    color: #d37deb;
-    text-shadow: 0 0 10px #d37deb;
-  }
-  @media(max-width: 1100px) {
-    body {
-      height: 100%;
-      margin: 5% auto; 
-      overflow: scroll;
-    }
-  }
-`
-
 const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 2%;
 `
 
 const RadioSt = styled.section`
@@ -70,6 +48,11 @@ label:active, input:checked + label{
 
 export default function ThreeCardSpread() {
 
+  const css = `
+        height: 100%;
+        overflow: scroll;
+        `
+
   const [typeOfPrediction, setTypeOfPrediction] = useState('question');
   const [disableChoice, setDisableChoice] = useState(false);
 
@@ -84,7 +67,6 @@ export default function ThreeCardSpread() {
   }
   
   return  <div className='App'>
-      <style>{css}</style>
       <Header>
          <Link to={'/'}><i className="far fa-arrow-alt-circle-left icon"></i></Link>
          <i className="far fa-question-circle icon"></i>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const UlStyled = styled.ul`
 list-style: none;
 text-align: center;
+margin-top: 40%;
 li:first-child {
  border-top-left-radius: 60px;
  border-top-right-radius: 60px;
@@ -39,7 +40,6 @@ a:link, a:visited {
 @media(max-width: 790px) {
   height: 100vw;
   width: 80%;
-
   overflow: none;
   a {
     font-size: 2rem;
@@ -51,7 +51,7 @@ export default function Menu() {
   return <>
     <UlStyled className={'menu'}>
      <li><Link to='/ThreeCardSpread'>Расклад на три карты</Link></li>
-     <li><a href='#'>Карта дня</a></li>
+     <li><Link to='/CardOfTheDay'>Карта дня</Link></li>
      <li><a href='#'>Совет и предостережение</a></li>
     </UlStyled>
    </>

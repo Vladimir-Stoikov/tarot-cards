@@ -14,9 +14,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .disable {
@@ -26,6 +26,27 @@ body {
 .spread {
   margin-top: 50%;
   display: none;
+}
+
+.icon {
+  color: white;
+  font-size: 4rem;
+  transition: all 0.2s ease;
+  margin: 20px 15px 0;
+}
+.icon:hover {
+  color: #ae54c7;
+}
+.icon:active {
+  color: #d37deb;
+  text-shadow: 0 0 10px #d37deb;
+}
+@media (max-width: 1100px) {
+  body {
+    height: 100%;
+    margin: 5% auto;
+    overflow: scroll;
+  }
 }
 
 /* Custom scrollbar */

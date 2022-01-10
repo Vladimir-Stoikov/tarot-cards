@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Menu from './pages/Menu';
 import ThreeCardSpread from './pages/ThreeCardSpread';
+import CardOfTheDay from './pages/CardOfTheDay';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Menu />} />
         <Route path='/ThreeCardSpread' element={<ThreeCardSpread />} />
+        <Route path='/CardOfTheDay' element={<CardOfTheDay />} />
       </Routes>
     </>
   );

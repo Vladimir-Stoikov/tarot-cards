@@ -2,12 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import {deckInfo} from './data/card-info'
 
+import Title from '../Title'
+
 const CardImg = styled.img`
 border-radius: 10px;
 width: 255px;
 height: 450px;
 object-fit: cover;
 box-shadow: 0 0 10px #753188;
+margin-bottom: 15px;
 `
 const CardSt = styled.section`
 width: 300px;
@@ -25,7 +28,7 @@ height: 200px;
 overflow-y: scroll;
 `
 
-export default function Card({cardNumber, time, type}) {
+export default function Card({cardNumber, time, type, func}) {
 
   let cardInfo = '';
 
@@ -37,7 +40,8 @@ export default function Card({cardNumber, time, type}) {
 
 
   return <CardSt>
-            <CardImg src={`/tarot/${cardNumber || 'cardBack'}.jpg`} alt="image" draggable={false} />
-            <CardText>{cardNumber ? cardInfo[0][type] : null}</CardText>
+            <CardImg onClick={() => func ? func() : null} src={`/tarot/${cardNumber || 'cardBack'}.jpg`} alt="image" draggable={false} />
+            <Title titleMargin='0 0 15px 0' color='#E59934' name={(cardNumber !== false && cardNumber !== 'cardBack') ? cardInfo[0].name : null}/>
+            <CardText>{(cardNumber !== false && cardNumber !== 'cardBack') ? cardInfo[0][type] : null}</CardText>
           </CardSt>;
 }

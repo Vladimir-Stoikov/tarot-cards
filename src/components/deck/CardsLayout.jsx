@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+
 import Card from './Card'
+
 
 const LayoutS = styled.section`
 margin: 50px 0;
@@ -48,10 +50,6 @@ export default function CardsLayout({type, func}) {
     ShuffleDeck();
     func();
   }
-
-  // const [current, setCurrent] = useState('');
-  // const [progress, setProgress] = useState('');
-  // const [result, setResult] = useState('');
  
   return <LayoutS>
          <Card type={type} cardNumber={shuffledDeck[25] || ''}/>
