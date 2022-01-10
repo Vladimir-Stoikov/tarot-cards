@@ -45,7 +45,7 @@ body {
   body {
     height: 100%;
     margin: 5% auto;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 

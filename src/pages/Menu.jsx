@@ -2,42 +2,46 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 
-const UlStyled = styled.ul`
+const LinkGroup = styled.section`
+display: flex;
+flex-direction: column;
 list-style: none;
 text-align: center;
-margin-top: 40%;
-li:first-child {
+margin: 20% auto 0;
+width: 40%;
+a {
+  font-size: 3rem;
+  background: #753188;
+  margin: 5px;
+  padding: 30px 30px;
+  color: white;
+  transition: all 0.3s ease;
+  border: none;
+  width: 100%;
+}
+a:hover {
+  background: #9b47b3;
+}
+a:active {
+  background: #ae54c7;
+}
+a:first-child {
  border-top-left-radius: 60px;
  border-top-right-radius: 60px;
 }
-li:last-child {
+a:last-child {
  border-bottom-left-radius: 60px;
  border-bottom-right-radius: 60px;
 }
-li {
-  background: #753188;
-  margin: 5px;
-  padding: 30px 40px;
-  transition: all 0.3s ease;
-}
-li:hover {
-  background: #9b47b3;
-}
-li:active {
-  background: #ae54c7;
-}
 a {
   text-decoration: none;
-  font-size: 3rem;
   user-select: none;
 }
-a:link, a:visited {
-  color: white;
-}
 @media(max-width: 1100px) {
-  margin: auto;
+  width: 70%;
 }
 @media(max-width: 790px) {
+  margin: 40% auto 0;
   height: 100vw;
   width: 80%;
   overflow: none;
@@ -49,10 +53,10 @@ a:link, a:visited {
 
 export default function Menu() {
   return <>
-    <UlStyled className={'menu'}>
-     <li><Link to='/ThreeCardSpread'>Расклад на три карты</Link></li>
-     <li><Link to='/CardOfTheDay'>Карта дня</Link></li>
-     <li><a href='#'>Совет и предостережение</a></li>
-    </UlStyled>
+    <LinkGroup className={'menu'}>
+     <Link to='/ThreeCardSpread'>Расклад на три карты</Link>
+     <Link to='/CardOfTheDay'>Карта дня</Link>
+     <a href='#'>Совет и предостережение</a>
+    </LinkGroup>
    </>
 }
