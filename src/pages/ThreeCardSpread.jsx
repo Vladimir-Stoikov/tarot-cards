@@ -80,7 +80,7 @@ export default function ThreeCardSpread() {
       </Header>
       <section className={infoClass}>
         {info.ThreeCardSpread}
-        <i class="fas fa-times close-info" onClick={showInfo}></i>
+        <i className="fas fa-times close-info" onClick={showInfo}></i>
         </section>
       <RadioSt>
         <Title name='Расклад на:' />

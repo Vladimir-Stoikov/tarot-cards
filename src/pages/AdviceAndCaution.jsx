@@ -37,17 +37,17 @@ const AdviceAndCaution = () => {
   const [infoClass, setInfoClass] = useState('info-disable');
 
   function getAdvice() {
-    let randomCard = Math.floor(Math.random() * 79);
+    let randomCard = Math.floor(Math.random() * 78);
     while(randomCard == caution) {
-      randomCard = Math.floor(Math.random() * 79);
+      randomCard = Math.floor(Math.random() * 78);
     }
     if(advice === 'cardBack') setAdvice(deckInfo[randomCard].cardName);
   }
 
   function getCaution() {
-    let randomCard = Math.floor(Math.random() * 79);
+    let randomCard = Math.floor(Math.random() * 78);
     while(randomCard == advice) {
-      randomCard = Math.floor(Math.random() * 79);
+      randomCard = Math.floor(Math.random() * 78);
     }
     if(caution === 'cardBack') setCaution(deckInfo[randomCard].cardName);
   }
@@ -64,7 +64,7 @@ const AdviceAndCaution = () => {
       </Header> 
       <section className={infoClass}>
         {info.AdviceAndCaution}
-        <i class="fas fa-times close-info" onClick={showInfo}></i>
+        <i className="fas fa-times close-info" onClick={showInfo}></i>
         </section>
       <CardGroup>
         <Card headTitle='Совет' func={getAdvice} cardNumber={advice} type='advice'/>

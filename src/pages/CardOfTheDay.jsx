@@ -31,7 +31,7 @@ const CardOfTheDay = () => {
   const [infoClass, setInfoClass] = useState('info-disable');
 
   function getDayCard() {
-    const randomCard =  Math.floor(Math.random() * 79);
+    const randomCard =  Math.floor(Math.random() * 78);
     if(dayCard === 'cardBack') setDayCard(deckInfo[randomCard].cardName);
   }
 
@@ -47,7 +47,7 @@ const CardOfTheDay = () => {
       </Header>
       <section className={infoClass}>
         {info.CardOfTheDay}
-        <i class="fas fa-times close-info" onClick={showInfo}></i>
+        <i className="fas fa-times close-info" onClick={showInfo}></i>
       </section> 
       <Card headTitle='Карта дня' func={getDayCard} cardNumber={dayCard} type='daily'/>
     </CardLayout>
