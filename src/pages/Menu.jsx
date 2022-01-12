@@ -45,7 +45,7 @@ a {
   width: 80%;
   overflow: none;
   a {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
  }
 `

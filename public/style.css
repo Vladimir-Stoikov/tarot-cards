@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  position: relative;
   background-color: #2c272e;
   display: flex;
   flex-direction: column;
@@ -41,15 +42,82 @@ body {
   color: #d37deb;
   text-shadow: 0 0 10px #d37deb;
 }
+
+.info-active {
+  user-select: none;
+  position: absolute;
+  top: 20%;
+  right: 35%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #7d3591;
+  padding: 1%;
+  width: 30%;
+  margin: auto;
+  border-radius: 20px;
+  border: 5px solid white;
+  box-shadow: 0 0 300px rgb(0, 0, 0);
+}
+
+.info-disable {
+  display: none;
+}
+
+.close-info {
+  text-align: right;
+  font-size: 3rem;
+}
+
+.close-info:hover {
+  color: #d382e9;
+}
+
+.close-info:active {
+  color: #8e5b9c;
+  text-shadow: 0 0 15px #4a2e52;
+}
+
+@media (max-width: 1700px) {
+  .info-active {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 2%;
+    width: 80%;
+  }
+}
+
 @media (max-width: 1100px) {
   body {
     height: 100%;
     margin: 5% auto;
     overflow-y: scroll;
   }
+  .info-active {
+    margin: 4% auto;
+    font-size: 1.5rem;
+    padding: 4%;
+    width: 70%;
+  }
+}
+
+@media (max-width: 700px) {
+  .info-active {
+    font-size: 1.1rem;
+    padding: 5% 4% 3%;
+    width: 70%;
+  }
+  .close-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem;
+  }
 }
 
 /* Custom scrollbar */
+
 ::-webkit-scrollbar {
   width: 8px;
 }

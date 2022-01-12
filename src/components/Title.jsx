@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 
 const TitleS = styled.h1`
+
 font-family: 'Neucha', cursive;
 font-size: 3rem;
 text-align: center;

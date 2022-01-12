@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 import Title from '../components/Title';
 import CardsLayout from '../components/deck/CardsLayout.jsx';
+import { info } from '../components/deck/data/info'
 
 const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2%;
 `
 
 const RadioSt = styled.section`
@@ -55,6 +57,7 @@ export default function ThreeCardSpread() {
 
   const [typeOfPrediction, setTypeOfPrediction] = useState('question');
   const [disableChoice, setDisableChoice] = useState(false);
+  const [infoClass, setInfoClass] = useState('info-disable');
 
   function ChangeType(type) {
     if(disableChoice === false) {
@@ -65,12 +68,20 @@ export default function ThreeCardSpread() {
   function LockChoice() {
     setDisableChoice(true);
   }
+
+    function showInfo() {
+    setInfoClass(prev => prev === 'info-disable' ? 'info-active' : 'info-disable');
+  }
   
   return  <div className='App'>
       <Header>
          <Link to={'/'}><i className="far fa-arrow-alt-circle-left icon"></i></Link>
-         <i className="far fa-question-circle icon"></i>
+         <i className="far fa-question-circle icon" onClick={showInfo}></i>
       </Header>
+      <section className={infoClass}>
+        {info.ThreeCardSpread}
+        <i class="fas fa-times close-info" onClick={showInfo}></i>
+        </section>
       <RadioSt>
         <Title name='Расклад на:' />
         <input disabled={disableChoice} type="radio" id='question' name='type' value='question' defaultChecked/>

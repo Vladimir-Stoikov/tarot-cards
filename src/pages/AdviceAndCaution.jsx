@@ -4,18 +4,20 @@ import { Link } from 'react-router-dom'
 
 import Card from '../components/deck/Card'
 import { deckInfo } from '../components/deck/data/card-info'
+import { info } from '../components/deck/data/info'
 
 
 const Header = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 `
 
 const CardGroup = styled.section`
   display: flex;
-  justify-content: center;
+  justify-content:center;
+  margin: 2% auto;
    @media(max-width: 1700px) {
     width: 90vw;
   }
@@ -30,8 +32,9 @@ const CardGroup = styled.section`
 
 const AdviceAndCaution = () => {
 
-  const [advice, setAdvice] = useState('cardBack')
-  const [caution, setCaution] = useState('cardBack')
+  const [advice, setAdvice] = useState('cardBack');
+  const [caution, setCaution] = useState('cardBack');
+  const [infoClass, setInfoClass] = useState('info-disable');
 
   function getAdvice() {
     let randomCard = Math.floor(Math.random() * 79);
@@ -49,12 +52,20 @@ const AdviceAndCaution = () => {
     if(caution === 'cardBack') setCaution(deckInfo[randomCard].cardName);
   }
 
+  function showInfo() {
+    setInfoClass(prev => prev === 'info-disable' ? 'info-active' : 'info-disable');
+  }
+
   return (
     <section>
       <Header>
          <Link to={'/'}><i className="far fa-arrow-alt-circle-left icon"></i></Link>
-         <i className="far fa-question-circle icon"></i>
+         <i className="far fa-question-circle icon" onClick={showInfo}></i>
       </Header> 
+      <section className={infoClass}>
+        {info.AdviceAndCaution}
+        <i class="fas fa-times close-info" onClick={showInfo}></i>
+        </section>
       <CardGroup>
         <Card headTitle='Совет' func={getAdvice} cardNumber={advice} type='advice'/>
         <Card headTitle='Предостережение' func={getCaution} cardNumber={caution} type='advice'/>

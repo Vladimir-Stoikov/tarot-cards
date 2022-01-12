@@ -18,7 +18,7 @@ justify-content: space-around;
 } 
 @media(max-width: 1200px) {
   width: 100%;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
 }
 `

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import Card from '../components/deck/Card'
 import { deckInfo } from '../components/deck/data/card-info'
+import { info } from '../components/deck/data/info'
 
 const Header = styled.header`
   display: flex;
@@ -12,26 +13,42 @@ const Header = styled.header`
 `
 
 const CardLayout = styled.section`
+position: relative;
 section {
   margin: 20px auto;
+}
+@media (max-width: 650px) {
+  img {
+    position: relative;
+    right: 20px;
+  }
 }
 `
 
 const CardOfTheDay = () => {
 
-  const [dayCard, setDayCard] = useState('cardBack')
+  const [dayCard, setDayCard] = useState('cardBack');
+  const [infoClass, setInfoClass] = useState('info-disable');
 
   function getDayCard() {
     const randomCard =  Math.floor(Math.random() * 79);
     if(dayCard === 'cardBack') setDayCard(deckInfo[randomCard].cardName);
   }
 
+  function showInfo() {
+    setInfoClass(prev => prev === 'info-disable' ? 'info-active' : 'info-disable');
+  }
+
   return (
     <CardLayout>
       <Header>
          <Link to={'/'}><i className="far fa-arrow-alt-circle-left icon"></i></Link>
-         <i className="far fa-question-circle icon"></i>
-      </Header> 
+         <i className="far fa-question-circle icon" onClick={showInfo}></i>
+      </Header>
+      <section className={infoClass}>
+        {info.CardOfTheDay}
+        <i class="fas fa-times close-info" onClick={showInfo}></i>
+      </section> 
       <Card headTitle='Карта дня' func={getDayCard} cardNumber={dayCard} type='daily'/>
     </CardLayout>
   )
