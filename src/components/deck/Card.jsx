@@ -23,6 +23,7 @@ const CardAndInfo = styled.article`
 display: flex;
 justify-content: center;
 @media (max-width: 650px) {
+  align-items: center;
   flex-direction: column;
 }
 `

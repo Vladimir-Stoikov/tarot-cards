@@ -68,7 +68,7 @@ const AdviceAndCaution = () => {
         </section>
       <CardGroup>
         <Card headTitle='Совет' func={getAdvice} cardNumber={advice} type='advice'/>
-        <Card headTitle='Предостережение' func={getCaution} cardNumber={caution} type='advice'/>
+        <Card headTitle='Предупреждение' func={getCaution} cardNumber={caution} type='advice'/>
       </CardGroup>
     </section>
   )

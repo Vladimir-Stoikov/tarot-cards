@@ -17,12 +17,7 @@ position: relative;
 section {
   margin: 20px auto;
 }
-@media (max-width: 650px) {
-  img {
-    position: relative;
-    right: 20px;
-  }
-}
+
 `
 
 const CardOfTheDay = () => {

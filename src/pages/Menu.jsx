@@ -19,7 +19,7 @@ a {
   margin: 5px 0;
   padding: 30px 30px;
   color: white;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   border: none;
   text-decoration: none;
   user-select: none;
