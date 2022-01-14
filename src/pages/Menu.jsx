@@ -84,7 +84,7 @@ export default function Menu() {
     <LinkGroup className={'menu'}>
      <Link to='/ThreeCardSpread'>Расклад на три карты</Link>
      <Link to='/CardOfTheDay'>Карта дня</Link>
-     <Link to='/AdviceAndCaution'>Совет и предостережение</Link>
+     <Link to='/AdviceAndCaution'>Совет и предупреждение</Link>
     </LinkGroup>
    </>
 }

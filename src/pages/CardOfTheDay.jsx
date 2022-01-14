@@ -13,7 +13,6 @@ const Header = styled.header`
 `
 
 const CardLayout = styled.section`
-position: relative;
 section {
   margin: 20px auto;
 }
