@@ -4,8 +4,9 @@ import styled from 'styled-components';
 
 const TitleS = styled.h1`
 
-font-family: 'Neucha', cursive;
+font-family: 'Cormorant Infant', serif;
 font-size: 3rem;
+text-shadow: 0 0 10px black;
 text-align: center;
 color: ${props => props.color ? props.color : '#ae54c7'};
 margin: ${props => props.margin ? props.margin : null};
