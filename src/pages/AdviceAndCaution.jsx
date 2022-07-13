@@ -38,7 +38,7 @@ const AdviceAndCaution = () => {
 
   function getAdvice() {
     let randomCard = Math.floor(Math.random() * 78);
-    while(randomCard == caution) {
+    while(randomCard === caution) {
       randomCard = Math.floor(Math.random() * 78);
     }
     if(advice === 'cardBack') setAdvice(deckInfo[randomCard].cardName);
@@ -46,7 +46,7 @@ const AdviceAndCaution = () => {
 
   function getCaution() {
     let randomCard = Math.floor(Math.random() * 78);
-    while(randomCard == advice) {
+    while(randomCard === advice) {
       randomCard = Math.floor(Math.random() * 78);
     }
     if(caution === 'cardBack') setCaution(deckInfo[randomCard].cardName);
@@ -65,7 +65,7 @@ const AdviceAndCaution = () => {
       <section className={infoClass}>
         {info.AdviceAndCaution}
         <i className="fas fa-times close-info" onClick={showInfo}></i>
-        </section>
+      </section>
       <CardGroup>
         <Card headTitle='Совет' func={getAdvice} cardNumber={advice} type='advice'/>
         <Card headTitle='Предупреждение' func={getCaution} cardNumber={caution} type='advice'/>
